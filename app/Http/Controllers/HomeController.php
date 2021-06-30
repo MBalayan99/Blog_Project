@@ -14,10 +14,10 @@ class HomeController extends Controller
         return view(view:'about');
     }
     public function revies(){
-        $rewiws = new Rewiw();
-        return view(view:'revies');
+        $rewiws = new Rewiw();        
+        return view('revies',['rewiws'=> $rewiws->all()]);
        
-        //dd($rewiws->all());
+       // dd($rewiws->all());
     
     }
     public function revies_check(Request $request){

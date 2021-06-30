@@ -19,7 +19,10 @@
 <button type="submit" class="btn  btn-success">SEND</button>
 </form>
 <h1> ALL Reviews</h1>
-@foreach($rewiws as el ) 
-
+@foreach($rewiws as $element)
+<div class=" alert alert-primary text text-red">
+<h3>{{ $element->email}}</h3>
+<h3>{{ $element->message}}</h3>
+</div>
 @endforeach
  @endsection
