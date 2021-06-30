@@ -19,4 +19,7 @@
 <button type="submit" class="btn  btn-success">SEND</button>
 </form>
 <h1> ALL Reviews</h1>
+@foreach($rewiws as el ) 
+
+@endforeach
  @endsection
