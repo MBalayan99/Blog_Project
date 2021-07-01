@@ -37,5 +37,7 @@ class HomeController extends Controller
        $rewiws->message =$request->input(key:'message');
         $rewiws->save();
        return redirect()->route(route:'revies');
-    }
+       
+  }
+    
 }
