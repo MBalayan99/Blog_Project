@@ -18,5 +18,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
 Route::get('/about', 'App\Http\Controllers\HomeController@about')->name('about');
 Route::get('/revies', 'App\Http\Controllers\HomeController@revies')->name('revies');
 Route::post('/revies/check', 'App\Http\Controllers\HomeController@revies_check')->name('revies_check');
+Route::get('/admin', 'App\Http\Controllers\HomeController@admin')->name('admin');
+Route::post('/admin/home_admin', 'App\Http\Controllers\HomeController@home_admin')->name('home_admin');
 //Route::get('/', 'HomeController@home');
 //Route::get('/about', 'HomeController@about');
