@@ -21,7 +21,7 @@
 
     <h1> ALL Reviews</h1>
     @foreach($rewiws as $rewiws)
-    <div class=" alert alert-primary text text-red">
+    <div class=" alert alert-primary text text-red;">
     
     <b>{{ $rewiws->email}}</b>
     <h3>{{$rewiws->Subject}}</h3>
