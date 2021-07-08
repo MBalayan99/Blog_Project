@@ -54,13 +54,12 @@ class HomeController extends Controller
     public function home_admin(Request $request)
     {
         //dd($request);
-        $valid = $request->validate([
+        $val = $request->validate([
             
-            'text' => 'required|min:15|max:800',
+            'text' => 'required|min:8|max:100',
             'title' => 'required|min:4|max:150',
             'desc' => 'required|min:15|max:800',
-
-
+                
         ]);
 
 

@@ -4,6 +4,15 @@ Admin
 @endsection
 @section('main_content')
 <div>
+@if($errors->any())
+    <div class="allert allert-warning ">
+    <ul>
+    @foreach($errors->all() as $error)
+    <li>{{$error}}</li>
+    @endforeach
+    </ul>
+    </div>
+    @endif
 <h1>Adding Posts</h1>
     <form method="post" action="admin/home_admin">
     @csrf
