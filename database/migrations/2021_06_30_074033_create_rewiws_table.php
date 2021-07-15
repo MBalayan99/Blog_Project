@@ -15,9 +15,9 @@ class CreateRewiwsTable extends Migration
     {
         Schema::create('rewiws', function (Blueprint $table) {
             $table->id();
-            $table->string(column:'email');
-            $table->string(column:'Subject');
-            $table->text(column:'message');
+            $table->string('email');
+            $table->string('Subject');
+            $table->text( 'message');
         });
     }
 

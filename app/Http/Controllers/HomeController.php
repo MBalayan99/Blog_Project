@@ -53,22 +53,24 @@ class HomeController extends Controller
     }
     public function home_admin(Request $request)
     {
-        //dd($request);
-        $val = $request->validate([
-            
-            'text' => 'required|min:8|max:100',
+
+        $request->validate([
+
+            //'text' => 'required|min:8|max:100',
             'title' => 'required|min:4|max:150',
             'desc' => 'required|min:15|max:800',
-                
+
         ]);
-
-
         $posts = new Posts();
-        $posts->image = $request->input('text');
-        $posts->title = $request->input('title');
-        $posts->desc = $request->input('desc');
-        
-        $posts->save();
-        return redirect()->route('home');
+        if ($request->file()) {
+            $filename            = time() . '_' . $request->image->getClientOriginalName();
+            $pathname            = $request->file('image')->storeAs('uploads', $filename, 'public');
+            $posts->image_name   = time() . '_' . $request->image->getClientOriginalName();
+            $posts->image_path   = '/storage/' . $pathname;
+            $posts->title        = $request->title;
+            $posts->desc         = $request->desc;
+            $posts->save();
+            return redirect()->route('home')->with('success', 'sucsess');
+        }
     }
 }
